@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link type="text/css" rel="stylesheet" href="https://cdn.actionstep.com/assets/DatetimeControl.css" media="screen">
+     <script type="text/javascript" src="https://cdn.actionstep.com/assets/Locale.js"></script>
+     <script type="text/javascript" src="https://cdn.actionstep.com/assets/DatetimeControl.js"></script>
+     <script type="text/javascript" src="https://cdn.actionstep.com/assets/phpDateUtilities.js"></script>
+     <script type="text/javascript">
+     //<!--    
+     if (typeof(ActionStep_Locale) !== 'undefined') {
+         ActionStep_Locale.setDateFormats('%d/%m/%Y', '%d %b %Y', '%A %B %e, %Y');
+         ActionStep_Locale.setFirstDayOfTheWeek('Monday');
+     }
+     
+     if (typeof(jQuery) != 'undefined') {
+         jQuery(window).ready(function() {
+             jQuery('.DateControl_CalIcon').attr("src", "https://cdn.actionstep.com/assets/ActionStep_DatetimeControl_Cal.png");
+         });
+     } else {
+         window.setTimeout(function() {
+             var calImages = document.getElementsByClassName("DateControl_CalIcon");
+             for (var i=0;i<calImages.length;i++) {
+                 calImages[i].src = "https://cdn.actionstep.com/assets/ActionStep_DatetimeControl_Cal.png";
+             }
+         }, 500);
+     }
+     ActionStep_DatetimeControl.CONFIG.dateFormat = 'DDMMYYYY';
+     
+     
+     //-->
+     </script>
+
+
+<style>
+  .AdvancedForm {
+      margin:0;
+      padding:0;
+      font-family:inherit;
+      line-height:1.4;
+      font-size:1em;
+      color:#333;
+  }
+  .AdvancedForm .FormField {
+      margin:0 0 2.5em 0;
+      width:100%;
+      font-size:inherit;
+  }
+  .AdvancedForm label {
+      display:block;
+      font-weight:bold;
+      margin:0 0 3px 0;
+      font-size:inherit;
+  }
+  .AdvancedForm label.required:after {
+      content:"*";
+      color:red;
+      display:inline-block;
+      vertical-align:top;
+      margin-left:3px;
+      font-size:0.9em;
+  }
+  .AdvancedForm p {
+      margin:2em 0;
+      font-size:inherit;
+  }
+  .AdvancedForm p.hint {
+      margin:1px 0 0 0;
+      font-style:italic;
+      color:#555;
+      font-size:0.9em;
+  }
+  .AdvancedForm input,
+  .AdvancedForm textarea {
+      border:1px #ccc solid;
+      padding:0.2em;
+      margin:0;
+      display:inline;
+      font:inherit;
+  }
+  .AdvancedForm input[type=text],
+  .AdvancedForm textarea
+  {
+      width:20em;
+  }
+  .AdvancedForm input.DateControl_DateInputBox {
+      width:6em;
+  }
+  .AdvancedForm input.TimeControl_TimeInputBox {
+      width:6em;
+  }
+  .AdvancedForm .DateControl_MemoInputBox {
+      width:10em;
+      border-color:#ccc;
+      border-style:dotted;
+      border-width:0 0 1px 0;
+      color:#555;
+      font-style:italic;
+  }
+  .AdvancedForm .FormField input:focus,
+  .AdvancedForm .FormField textarea:focus {
+      border-color:#aaa;
+  }
+  .AdvancedForm .FormField select {
+      padding:0;
+      margin:0;
+      display:inline;
+      min-width:10em;
+      max-width:18em;
+  }
+  .AdvancedForm button.Submit {
+      font-weight:bold;
+      cursor:pointer;
+  }
+
+  .selectOption {
+    width: 94%;
+    padding-bottom: 30px;
+  }
+  
+.selectOption_visatype {
+  width: 94%;
+  height: 140px;
+  border-radius: 5px;
+}
+  
+  </style>
+
+
+   </head>
+<body>
+  <div class="container">
+    
+    <div class="content">
+
+
+      <form id="ActionStepWebform3" name="ActionStepWebform3" enctype="application/x-www-form-urlencoded" class="AdvancedForm Webform1" method="post" action="https://go.actionstep.com/frontend/application/webform/post">
+
+        <input type="hidden" name="organization_key" value="maisonchen" class="OrganizationKey" id="organization_key">
+        
+        <input type="hidden" name="uid" value="9da34eb1d0f726e28ac94d01b86f3496211cefa6" class="Uid" id="uid">
+        <div class="FormField P27FirstName"><label for="p27__first_name" class="required js-label">First Name</label>
+        
+        <input type="text" name="p27__first_name" id="p27__first_name" value="" class="P27FirstName" required="required"></div>
+        <div class="FormField P27LastName"><label for="p27__last_name" class="required js-label">Last Name</label>
+        
+        <input type="text" name="p27__last_name" id="p27__last_name" value="" class="P27LastName" required="required"></div>
+        <div class="FormField P27Gender"><label for="p27__gender" class="optional js-label">Gender</label>
+        
+        <select name="p27__gender" id="p27__gender" class="P27Gender">
+            <option value="" label="Please&nbsp;select">Please&nbsp;select</option>
+            <option value="M" label="Male">Male</option>
+            <option value="F" label="Female">Female</option>
+        </select></div>
+        <div class="FormField P27EMail"><label for="p27__e_mail" class="required js-label">Email Address</label>
+        
+        <input type="text" name="p27__e_mail" id="p27__e_mail" value="" class="P27EMail" required="required"></div>
+        <div class="FormField P27Phone2CountryCode"><label for="p27__phone2_country_code" class="required js-label">Country Code</label>
+        
+        <select name="p27__phone2_country_code" id="p27__phone2_country_code" class="P27Phone2CountryCode" required="required">
+            <option value="0" label="0">0</option>
+            <option value="1" label="1">1</option>
+            <option value="7" label="7">7</option>
+            <option value="20" label="20">20</option>
+            <option value="27" label="27">27</option>
+            <option value="30" label="30">30</option>
+            <option value="31" label="31">31</option>
+            <option value="32" label="32">32</option>
+            <option value="33" label="33">33</option>
+            <option value="34" label="34">34</option>
+            <option value="36" label="36">36</option>
+            <option value="39" label="39">39</option>
+            <option value="40" label="40">40</option>
+            <option value="41" label="41">41</option>
+            <option value="43" label="43">43</option>
+            <option value="44" label="44">44</option>
+            <option value="45" label="45">45</option>
+            <option value="46" label="46">46</option>
+            <option value="47" label="47">47</option>
+            <option value="48" label="48">48</option>
+            <option value="49" label="49">49</option>
+            <option value="51" label="51">51</option>
+            <option value="52" label="52">52</option>
+            <option value="53" label="53">53</option>
+            <option value="54" label="54">54</option>
+            <option value="55" label="55">55</option>
+            <option value="56" label="56">56</option>
+            <option value="57" label="57">57</option>
+            <option value="58" label="58">58</option>
+            <option value="60" label="60">60</option>
+            <option value="61" label="61">61</option>
+            <option value="62" label="62">62</option>
+            <option value="63" label="63">63</option>
+            <option value="64" label="64">64</option>
+            <option value="65" label="65">65</option>
+            <option value="66" label="66">66</option>
+            <option value="81" label="81">81</option>
+            <option value="82" label="82">82</option>
+            <option value="84" label="84">84</option>
+            <option value="86" label="86">86</option>
+            <option value="90" label="90">90</option>
+            <option value="91" label="91">91</option>
+            <option value="92" label="92">92</option>
+            <option value="93" label="93">93</option>
+            <option value="94" label="94">94</option>
+            <option value="95" label="95">95</option>
+            <option value="98" label="98">98</option>
+            <option value="211" label="211">211</option>
+            <option value="212" label="212">212</option>
+            <option value="213" label="213">213</option>
+            <option value="216" label="216">216</option>
+            <option value="218" label="218">218</option>
+            <option value="220" label="220">220</option>
+            <option value="221" label="221">221</option>
+            <option value="222" label="222">222</option>
+            <option value="223" label="223">223</option>
+            <option value="224" label="224">224</option>
+            <option value="225" label="225">225</option>
+            <option value="226" label="226">226</option>
+            <option value="227" label="227">227</option>
+            <option value="228" label="228">228</option>
+            <option value="229" label="229">229</option>
+            <option value="230" label="230">230</option>
+            <option value="231" label="231">231</option>
+            <option value="232" label="232">232</option>
+            <option value="233" label="233">233</option>
+            <option value="234" label="234">234</option>
+            <option value="235" label="235">235</option>
+            <option value="236" label="236">236</option>
+            <option value="237" label="237">237</option>
+            <option value="238" label="238">238</option>
+            <option value="239" label="239">239</option>
+            <option value="240" label="240">240</option>
+            <option value="241" label="241">241</option>
+            <option value="242" label="242">242</option>
+            <option value="243" label="243">243</option>
+            <option value="244" label="244">244</option>
+            <option value="245" label="245">245</option>
+            <option value="248" label="248">248</option>
+            <option value="249" label="249">249</option>
+            <option value="250" label="250">250</option>
+            <option value="251" label="251">251</option>
+            <option value="252" label="252">252</option>
+            <option value="253" label="253">253</option>
+            <option value="254" label="254">254</option>
+            <option value="255" label="255">255</option>
+            <option value="256" label="256">256</option>
+            <option value="257" label="257">257</option>
+            <option value="258" label="258">258</option>
+            <option value="260" label="260">260</option>
+            <option value="261" label="261">261</option>
+            <option value="262" label="262">262</option>
+            <option value="263" label="263">263</option>
+            <option value="264" label="264">264</option>
+            <option value="265" label="265">265</option>
+            <option value="266" label="266">266</option>
+            <option value="267" label="267">267</option>
+            <option value="268" label="268">268</option>
+            <option value="269" label="269">269</option>
+            <option value="290" label="290">290</option>
+            <option value="291" label="291">291</option>
+            <option value="297" label="297">297</option>
+            <option value="298" label="298">298</option>
+            <option value="299" label="299">299</option>
+            <option value="350" label="350">350</option>
+            <option value="351" label="351">351</option>
+            <option value="352" label="352">352</option>
+            <option value="353" label="353">353</option>
+            <option value="354" label="354">354</option>
+            <option value="355" label="355">355</option>
+            <option value="356" label="356">356</option>
+            <option value="357" label="357">357</option>
+            <option value="358" label="358">358</option>
+            <option value="359" label="359">359</option>
+            <option value="370" label="370">370</option>
+            <option value="371" label="371">371</option>
+            <option value="372" label="372">372</option>
+            <option value="373" label="373">373</option>
+            <option value="374" label="374">374</option>
+            <option value="375" label="375">375</option>
+            <option value="376" label="376">376</option>
+            <option value="377" label="377">377</option>
+            <option value="378" label="378">378</option>
+            <option value="380" label="380">380</option>
+            <option value="381" label="381">381</option>
+            <option value="382" label="382">382</option>
+            <option value="383" label="383">383</option>
+            <option value="385" label="385">385</option>
+            <option value="386" label="386">386</option>
+            <option value="387" label="387">387</option>
+            <option value="389" label="389">389</option>
+            <option value="420" label="420">420</option>
+            <option value="421" label="421">421</option>
+            <option value="423" label="423">423</option>
+            <option value="500" label="500">500</option>
+            <option value="501" label="501">501</option>
+            <option value="502" label="502">502</option>
+            <option value="503" label="503">503</option>
+            <option value="504" label="504">504</option>
+            <option value="505" label="505">505</option>
+            <option value="506" label="506">506</option>
+            <option value="507" label="507">507</option>
+            <option value="508" label="508">508</option>
+            <option value="509" label="509">509</option>
+            <option value="590" label="590">590</option>
+            <option value="591" label="591">591</option>
+            <option value="592" label="592">592</option>
+            <option value="593" label="593">593</option>
+            <option value="594" label="594">594</option>
+            <option value="595" label="595">595</option>
+            <option value="596" label="596">596</option>
+            <option value="597" label="597">597</option>
+            <option value="598" label="598">598</option>
+            <option value="599" label="599">599</option>
+            <option value="670" label="670">670</option>
+            <option value="672" label="672">672</option>
+            <option value="673" label="673">673</option>
+            <option value="674" label="674">674</option>
+            <option value="675" label="675">675</option>
+            <option value="676" label="676">676</option>
+            <option value="677" label="677">677</option>
+            <option value="678" label="678">678</option>
+            <option value="679" label="679">679</option>
+            <option value="680" label="680">680</option>
+            <option value="681" label="681">681</option>
+            <option value="682" label="682">682</option>
+            <option value="683" label="683">683</option>
+            <option value="685" label="685">685</option>
+            <option value="686" label="686">686</option>
+            <option value="687" label="687">687</option>
+            <option value="688" label="688">688</option>
+            <option value="689" label="689">689</option>
+            <option value="690" label="690">690</option>
+            <option value="691" label="691">691</option>
+            <option value="692" label="692">692</option>
+            <option value="850" label="850">850</option>
+            <option value="852" label="852">852</option>
+            <option value="853" label="853">853</option>
+            <option value="855" label="855">855</option>
+            <option value="856" label="856">856</option>
+            <option value="870" label="870">870</option>
+            <option value="880" label="880">880</option>
+            <option value="886" label="886">886</option>
+            <option value="960" label="960">960</option>
+            <option value="961" label="961">961</option>
+            <option value="962" label="962">962</option>
+            <option value="963" label="963">963</option>
+            <option value="964" label="964">964</option>
+            <option value="965" label="965">965</option>
+            <option value="966" label="966">966</option>
+            <option value="967" label="967">967</option>
+            <option value="968" label="968">968</option>
+            <option value="970" label="970">970</option>
+            <option value="971" label="971">971</option>
+            <option value="972" label="972">972</option>
+            <option value="973" label="973">973</option>
+            <option value="974" label="974">974</option>
+            <option value="975" label="975">975</option>
+            <option value="976" label="976">976</option>
+            <option value="977" label="977">977</option>
+            <option value="992" label="992">992</option>
+            <option value="993" label="993">993</option>
+            <option value="994" label="994">994</option>
+            <option value="995" label="995">995</option>
+            <option value="996" label="996">996</option>
+            <option value="998" label="998">998</option>
+            <option value="1242" label="1242">1242</option>
+            <option value="1246" label="1246">1246</option>
+            <option value="1264" label="1264">1264</option>
+            <option value="1268" label="1268">1268</option>
+            <option value="1284" label="1284">1284</option>
+            <option value="1340" label="1340">1340</option>
+            <option value="1345" label="1345">1345</option>
+            <option value="1441" label="1441">1441</option>
+            <option value="1473" label="1473">1473</option>
+            <option value="1649" label="1649">1649</option>
+            <option value="1664" label="1664">1664</option>
+            <option value="1670" label="1670">1670</option>
+            <option value="1671" label="1671">1671</option>
+            <option value="1684" label="1684">1684</option>
+            <option value="1721" label="1721">1721</option>
+            <option value="1758" label="1758">1758</option>
+            <option value="1767" label="1767">1767</option>
+            <option value="1784" label="1784">1784</option>
+            <option value="1809" label="1809">1809</option>
+            <option value="1868" label="1868">1868</option>
+            <option value="1869" label="1869">1869</option>
+            <option value="1876" label="1876">1876</option>
+            <option value="5999" label="5999">5999</option>
+        </select></div>
+        <div class="FormField P27Phone1"><label for="p27__phone1" class="required js-label">Phone Number</label>
+        
+        <input type="text" name="p27__phone1" id="p27__phone1" value="" class="P27Phone1" required="required"></div>
+        <div class="FormField P27DateOfBirth"><label for="p27__date_of_birth" class="optional js-label">Date of Birth</label>
+        
+        <input type="text" name="p27__date_of_birth" id="p27__date_of_birth" value="" class="P27DateOfBirthdateControl" required="required"></div>
+        <div class="FormField P27AddressLine1"><label for="p27__address_line_1" class="required js-label">Physical Address</label>
+        
+        <input type="text" name="p27__address_line_1" id="p27__address_line_1" value="" class="P27AddressLine1"></div>
+        <div class="FormField P27County"><label for="p27__county" class="optional js-label">Suburb</label>
+        
+        <input type="text" name="p27__county" id="p27__county" value="" class="P27County"></div>
+        <div class="FormField P27StateProvince"><label for="p27__state_province" class="optional js-label">State</label>
+        
+        <input type="text" name="p27__state_province" id="p27__state_province" value="" class="P27StateProvince"></div>
+        <div class="FormField P27CountryId"><label for="p27__country_id" class="optional js-label">Country</label>
+        
+        <select name="p27__country_id" id="p27__country_id" class="P27CountryId">
+            <optgroup value="0" id="p27__country_id-optgroup-Commonly used" label="Commonly used">
+            <option value="AU" label="Australia" selected="selected">Australia</option>
+            <option value="IN" label="India">India</option>
+            <option value="PH" label="Philippines">Philippines</option>
+            <option value="MY" label="Malaysia">Malaysia</option>
+            <option value="NZ" label="New&nbsp;Zealand">New&nbsp;Zealand</option>
+            <option value="AE" label="United&nbsp;Arab&nbsp;Emirates">United&nbsp;Arab&nbsp;Emirates</option>
+            <option value="GB" label="United&nbsp;Kingdom">United&nbsp;Kingdom</option>
+            <option value="LK" label="Sri&nbsp;Lanka">Sri&nbsp;Lanka</option>
+            <option value="SG" label="Singapore">Singapore</option>
+            <option value="ID" label="Indonesia">Indonesia</option>
+            <option value="KE" label="Kenya">Kenya</option>
+            <option value="US" label="USA">USA</option>
+            </optgroup>
+            <optgroup value="0" id="p27__country_id-optgroup-All countries" label="All countries">
+            <option value="AF" label="Afghanistan">Afghanistan</option>
+            <option value="AX" label="Aland&nbsp;Islands">Aland&nbsp;Islands</option>
+            <option value="AL" label="Albania">Albania</option>
+            <option value="DZ" label="Algeria">Algeria</option>
+            <option value="AS" label="American&nbsp;Samoa">American&nbsp;Samoa</option>
+            <option value="AD" label="Andorra">Andorra</option>
+            <option value="AO" label="Angola">Angola</option>
+            <option value="AI" label="Anguilla">Anguilla</option>
+            <option value="AQ" label="Antarctica">Antarctica</option>
+            <option value="AG" label="Antigua&nbsp;&amp;&nbsp;Barbuda">Antigua&nbsp;&amp;&nbsp;Barbuda</option>
+            <option value="AR" label="Argentina">Argentina</option>
+            <option value="AM" label="Armenia">Armenia</option>
+            <option value="AW" label="Aruba">Aruba</option>
+            <option value="AU" label="Australia" selected="selected">Australia</option>
+            <option value="AT" label="Austria">Austria</option>
+            <option value="AZ" label="Azerbaijan">Azerbaijan</option>
+            <option value="BS" label="Bahamas">Bahamas</option>
+            <option value="BH" label="Bahrain">Bahrain</option>
+            <option value="GG" label="Bailiwick&nbsp;of&nbsp;Guernsey">Bailiwick&nbsp;of&nbsp;Guernsey</option>
+            <option value="JE" label="Bailiwick&nbsp;of&nbsp;Jersey">Bailiwick&nbsp;of&nbsp;Jersey</option>
+            <option value="BD" label="Bangladesh">Bangladesh</option>
+            <option value="BB" label="Barbados">Barbados</option>
+            <option value="BY" label="Belarus">Belarus</option>
+            <option value="BE" label="Belgium">Belgium</option>
+            <option value="BZ" label="Belize">Belize</option>
+            <option value="BJ" label="Benin">Benin</option>
+            <option value="BM" label="Bermuda">Bermuda</option>
+            <option value="BT" label="Bhutan">Bhutan</option>
+            <option value="BO" label="Bolivia">Bolivia</option>
+            <option value="BQ" label="Bonaire,&nbsp;Sint&nbsp;Eustatius&nbsp;and&nbsp;Saba">Bonaire,&nbsp;Sint&nbsp;Eustatius&nbsp;and&nbsp;Saba</option>
+            <option value="BA" label="Bosnia&nbsp;and&nbsp;Herzegovina">Bosnia&nbsp;and&nbsp;Herzegovina</option>
+            <option value="BW" label="Botswana">Botswana</option>
+            <option value="BR" label="Brazil">Brazil</option>
+            <option value="VG" label="British&nbsp;Virgin&nbsp;Islands">British&nbsp;Virgin&nbsp;Islands</option>
+            <option value="BN" label="Brunei&nbsp;Darussalam">Brunei&nbsp;Darussalam</option>
+            <option value="BG" label="Bulgaria">Bulgaria</option>
+            <option value="BF" label="Burkina&nbsp;Faso">Burkina&nbsp;Faso</option>
+            <option value="BI" label="Burundi">Burundi</option>
+            <option value="KH" label="Cambodia">Cambodia</option>
+            <option value="CM" label="Cameroon">Cameroon</option>
+            <option value="CA" label="Canada">Canada</option>
+            <option value="CV" label="Cape&nbsp;Verde">Cape&nbsp;Verde</option>
+            <option value="KY" label="Cayman&nbsp;Islands">Cayman&nbsp;Islands</option>
+            <option value="CF" label="Central&nbsp;African&nbsp;Republic">Central&nbsp;African&nbsp;Republic</option>
+            <option value="TD" label="Chad">Chad</option>
+            <option value="CL" label="Chile">Chile</option>
+            <option value="CN" label="China">China</option>
+            <option value="CX" label="Christmas&nbsp;Island">Christmas&nbsp;Island</option>
+            <option value="CC" label="Cocos&nbsp;(Keeling)&nbsp;Islands">Cocos&nbsp;(Keeling)&nbsp;Islands</option>
+            <option value="CO" label="Colombia">Colombia</option>
+            <option value="KM" label="Comoros">Comoros</option>
+            <option value="CD" label="Congo,&nbsp;Democratic&nbsp;Republic&nbsp;of">Congo,&nbsp;Democratic&nbsp;Republic&nbsp;of</option>
+            <option value="CG" label="Congo,&nbsp;Republic&nbsp;of">Congo,&nbsp;Republic&nbsp;of</option>
+            <option value="CK" label="Cook&nbsp;Islands">Cook&nbsp;Islands</option>
+            <option value="CR" label="Costa&nbsp;Rica">Costa&nbsp;Rica</option>
+            <option value="CI" label="Côte&nbsp;d'Ivoire">Côte&nbsp;d'Ivoire</option>
+            <option value="HR" label="Croatia">Croatia</option>
+            <option value="CU" label="Cuba">Cuba</option>
+            <option value="CW" label="Curaçao">Curaçao</option>
+            <option value="CY" label="Cyprus">Cyprus</option>
+            <option value="CZ" label="Czech&nbsp;Republic">Czech&nbsp;Republic</option>
+            <option value="DK" label="Denmark">Denmark</option>
+            <option value="DJ" label="Djibouti">Djibouti</option>
+            <option value="DM" label="Dominica">Dominica</option>
+            <option value="DO" label="Dominican&nbsp;Republic">Dominican&nbsp;Republic</option>
+            <option value="EC" label="Ecuador">Ecuador</option>
+            <option value="EG" label="Egypt">Egypt</option>
+            <option value="SV" label="El&nbsp;Salvador">El&nbsp;Salvador</option>
+            <option value="GQ" label="Equatorial&nbsp;Guinea">Equatorial&nbsp;Guinea</option>
+            <option value="ER" label="Eritrea">Eritrea</option>
+            <option value="EE" label="Estonia">Estonia</option>
+            <option value="ET" label="Ethiopia">Ethiopia</option>
+            <option value="FK" label="Falkland&nbsp;Islands&nbsp;(Malvinas)">Falkland&nbsp;Islands&nbsp;(Malvinas)</option>
+            <option value="FO" label="Faroe&nbsp;Islands">Faroe&nbsp;Islands</option>
+            <option value="FJ" label="Fiji">Fiji</option>
+            <option value="FI" label="Finland">Finland</option>
+            <option value="YU" label="Former&nbsp;Yugoslavia">Former&nbsp;Yugoslavia</option>
+            <option value="FR" label="France">France</option>
+            <option value="GF" label="French&nbsp;Guiana">French&nbsp;Guiana</option>
+            <option value="PF" label="French&nbsp;Polynesia">French&nbsp;Polynesia</option>
+            <option value="GA" label="Gabon">Gabon</option>
+            <option value="GM" label="Gambia">Gambia</option>
+            <option value="GE" label="Georgia">Georgia</option>
+            <option value="DE" label="Germany">Germany</option>
+            <option value="GH" label="Ghana">Ghana</option>
+            <option value="GI" label="Gibraltar">Gibraltar</option>
+            <option value="GR" label="Greece">Greece</option>
+            <option value="GL" label="Greenland">Greenland</option>
+            <option value="GD" label="Grenada">Grenada</option>
+            <option value="GP" label="Guadeloupe">Guadeloupe</option>
+            <option value="GU" label="Guam">Guam</option>
+            <option value="GT" label="Guatemala">Guatemala</option>
+            <option value="GN" label="Guinea">Guinea</option>
+            <option value="GW" label="Guinea-Bissau">Guinea-Bissau</option>
+            <option value="GY" label="Guyana">Guyana</option>
+            <option value="HT" label="Haiti">Haiti</option>
+            <option value="HN" label="Honduras">Honduras</option>
+            <option value="HK" label="Hong&nbsp;Kong">Hong&nbsp;Kong</option>
+            <option value="HU" label="Hungary">Hungary</option>
+            <option value="IS" label="Iceland">Iceland</option>
+            <option value="IN" label="India">India</option>
+            <option value="ID" label="Indonesia">Indonesia</option>
+            <option value="IQ" label="Iraq">Iraq</option>
+            <option value="IE" label="Ireland">Ireland</option>
+            <option value="IR" label="Islamic&nbsp;Republic&nbsp;of&nbsp;Iran">Islamic&nbsp;Republic&nbsp;of&nbsp;Iran</option>
+            <option value="IM" label="Isle&nbsp;of&nbsp;Man">Isle&nbsp;of&nbsp;Man</option>
+            <option value="IL" label="Israel">Israel</option>
+            <option value="IT" label="Italy">Italy</option>
+            <option value="JM" label="Jamaica">Jamaica</option>
+            <option value="JP" label="Japan">Japan</option>
+            <option value="JO" label="Jordan">Jordan</option>
+            <option value="KZ" label="Kazakhstan">Kazakhstan</option>
+            <option value="KE" label="Kenya">Kenya</option>
+            <option value="KI" label="Kiribati">Kiribati</option>
+            <option value="KP" label="Korea,&nbsp;Democratic&nbsp;Peoples&nbsp;Republic&nbsp;of">Korea,&nbsp;Democratic&nbsp;Peoples&nbsp;Republic&nbsp;of</option>
+            <option value="KR" label="Korea,&nbsp;Republic&nbsp;of">Korea,&nbsp;Republic&nbsp;of</option>
+            <option value="XK" label="Kosovo">Kosovo</option>
+            <option value="KW" label="Kuwait">Kuwait</option>
+            <option value="KG" label="Kyrgyzstan">Kyrgyzstan</option>
+            <option value="LA" label="Lao&nbsp;People's&nbsp;Democratic&nbsp;Republic">Lao&nbsp;People's&nbsp;Democratic&nbsp;Republic</option>
+            <option value="LV" label="Latvia">Latvia</option>
+            <option value="LB" label="Lebanon">Lebanon</option>
+            <option value="LS" label="Lesotho">Lesotho</option>
+            <option value="LR" label="Liberia">Liberia</option>
+            <option value="LY" label="Libyan&nbsp;Arab&nbsp;Jamahiriya">Libyan&nbsp;Arab&nbsp;Jamahiriya</option>
+            <option value="LI" label="Liechtenstein">Liechtenstein</option>
+            <option value="LT" label="Lithuania">Lithuania</option>
+            <option value="LU" label="Luxembourg">Luxembourg</option>
+            <option value="MO" label="Macau">Macau</option>
+            <option value="MK" label="Macedonia">Macedonia</option>
+            <option value="MG" label="Madagascar">Madagascar</option>
+            <option value="MW" label="Malawi">Malawi</option>
+            <option value="MY" label="Malaysia">Malaysia</option>
+            <option value="MV" label="Maldives">Maldives</option>
+            <option value="ML" label="Mali">Mali</option>
+            <option value="MT" label="Malta">Malta</option>
+            <option value="MH" label="Marshall&nbsp;Islands">Marshall&nbsp;Islands</option>
+            <option value="MQ" label="Martinique">Martinique</option>
+            <option value="MR" label="Mauritania">Mauritania</option>
+            <option value="MU" label="Mauritius">Mauritius</option>
+            <option value="YT" label="Mayotte">Mayotte</option>
+            <option value="MX" label="Mexico">Mexico</option>
+            <option value="FM" label="Micronesia">Micronesia</option>
+            <option value="MD" label="Moldova,&nbsp;Republic&nbsp;of">Moldova,&nbsp;Republic&nbsp;of</option>
+            <option value="MC" label="Monaco">Monaco</option>
+            <option value="MN" label="Mongolia">Mongolia</option>
+            <option value="ME" label="Montenegro">Montenegro</option>
+            <option value="MS" label="Montserrat">Montserrat</option>
+            <option value="MA" label="Morocco">Morocco</option>
+            <option value="MZ" label="Mozambique">Mozambique</option>
+            <option value="MM" label="Myanmar">Myanmar</option>
+            <option value="NA" label="Namibia">Namibia</option>
+            <option value="NR" label="Nauru">Nauru</option>
+            <option value="NP" label="Nepal">Nepal</option>
+            <option value="NL" label="Netherlands">Netherlands</option>
+            <option value="AN" label="Netherlands&nbsp;Antilles">Netherlands&nbsp;Antilles</option>
+            <option value="NC" label="New&nbsp;Caledonia">New&nbsp;Caledonia</option>
+            <option value="NZ" label="New&nbsp;Zealand">New&nbsp;Zealand</option>
+            <option value="NI" label="Nicaragua">Nicaragua</option>
+            <option value="NE" label="Niger">Niger</option>
+            <option value="NG" label="Nigeria">Nigeria</option>
+            <option value="NU" label="Niue">Niue</option>
+            <option value="NF" label="Norfolk&nbsp;Island">Norfolk&nbsp;Island</option>
+            <option value="MP" label="Northern&nbsp;Mariana&nbsp;Islands">Northern&nbsp;Mariana&nbsp;Islands</option>
+            <option value="NO" label="Norway">Norway</option>
+            <option value="OM" label="Oman">Oman</option>
+            <option value="PK" label="Pakistan">Pakistan</option>
+            <option value="PW" label="Palau">Palau</option>
+            <option value="PS" label="Palestine">Palestine</option>
+            <option value="PA" label="Panama">Panama</option>
+            <option value="PG" label="Papua&nbsp;New&nbsp;Guinea">Papua&nbsp;New&nbsp;Guinea</option>
+            <option value="PY" label="Paraguay">Paraguay</option>
+            <option value="PE" label="Peru">Peru</option>
+            <option value="PH" label="Philippines">Philippines</option>
+            <option value="PN" label="Pitcairn">Pitcairn</option>
+            <option value="PL" label="Poland">Poland</option>
+            <option value="PT" label="Portugal">Portugal</option>
+            <option value="PR" label="Puerto&nbsp;Rico">Puerto&nbsp;Rico</option>
+            <option value="QA" label="Qatar">Qatar</option>
+            <option value="RE" label="Reunion">Reunion</option>
+            <option value="RO" label="Romania">Romania</option>
+            <option value="RU" label="Russian&nbsp;Federation">Russian&nbsp;Federation</option>
+            <option value="RW" label="Rwanda">Rwanda</option>
+            <option value="BL" label="Saint&nbsp;Barthélemy">Saint&nbsp;Barthélemy</option>
+            <option value="LC" label="Saint&nbsp;Lucia">Saint&nbsp;Lucia</option>
+            <option value="MF" label="Saint&nbsp;Martin">Saint&nbsp;Martin</option>
+            <option value="WS" label="Samoa">Samoa</option>
+            <option value="SM" label="San&nbsp;Marino">San&nbsp;Marino</option>
+            <option value="ST" label="Sao&nbsp;Tome&nbsp;&amp;&nbsp;Principe">Sao&nbsp;Tome&nbsp;&amp;&nbsp;Principe</option>
+            <option value="SA" label="Saudi&nbsp;Arabia">Saudi&nbsp;Arabia</option>
+            <option value="SN" label="Senegal">Senegal</option>
+            <option value="RS" label="Serbia">Serbia</option>
+            <option value="SC" label="Seychelles">Seychelles</option>
+            <option value="SL" label="Sierra&nbsp;Leone">Sierra&nbsp;Leone</option>
+            <option value="SG" label="Singapore">Singapore</option>
+            <option value="SX" label="Sint&nbsp;Maarten">Sint&nbsp;Maarten</option>
+            <option value="SK" label="Slovakia">Slovakia</option>
+            <option value="SI" label="Slovenia">Slovenia</option>
+            <option value="SB" label="Solomon&nbsp;Islands">Solomon&nbsp;Islands</option>
+            <option value="SO" label="Somalia">Somalia</option>
+            <option value="ZA" label="South&nbsp;Africa">South&nbsp;Africa</option>
+            <option value="SS" label="South&nbsp;Sudan">South&nbsp;Sudan</option>
+            <option value="ES" label="Spain">Spain</option>
+            <option value="LK" label="Sri&nbsp;Lanka">Sri&nbsp;Lanka</option>
+            <option value="SH" label="St.&nbsp;Helena">St.&nbsp;Helena</option>
+            <option value="KN" label="St.&nbsp;Kitts&nbsp;and&nbsp;Nevis">St.&nbsp;Kitts&nbsp;and&nbsp;Nevis</option>
+            <option value="PM" label="St.&nbsp;Pierre&nbsp;&amp;&nbsp;Miquelon">St.&nbsp;Pierre&nbsp;&amp;&nbsp;Miquelon</option>
+            <option value="VC" label="St.&nbsp;Vincent&nbsp;&amp;&nbsp;the&nbsp;Grenadines">St.&nbsp;Vincent&nbsp;&amp;&nbsp;the&nbsp;Grenadines</option>
+            <option value="SD" label="Sudan">Sudan</option>
+            <option value="SR" label="Suriname">Suriname</option>
+            <option value="SZ" label="Swaziland">Swaziland</option>
+            <option value="SE" label="Sweden">Sweden</option>
+            <option value="CH" label="Switzerland">Switzerland</option>
+            <option value="SY" label="Syrian&nbsp;Arab&nbsp;Republic">Syrian&nbsp;Arab&nbsp;Republic</option>
+            <option value="TW" label="Taiwan,&nbsp;ROC">Taiwan,&nbsp;ROC</option>
+            <option value="TJ" label="Tajikistan">Tajikistan</option>
+            <option value="TZ" label="Tanzania,&nbsp;United&nbsp;Republic&nbsp;of">Tanzania,&nbsp;United&nbsp;Republic&nbsp;of</option>
+            <option value="TH" label="Thailand">Thailand</option>
+            <option value="TL" label="Timor-Leste">Timor-Leste</option>
+            <option value="TG" label="Togo">Togo</option>
+            <option value="TK" label="Tokelau">Tokelau</option>
+            <option value="TO" label="Tonga">Tonga</option>
+            <option value="TT" label="Trinidad&nbsp;&amp;&nbsp;Tobago">Trinidad&nbsp;&amp;&nbsp;Tobago</option>
+            <option value="TN" label="Tunisia">Tunisia</option>
+            <option value="TR" label="Turkey">Turkey</option>
+            <option value="TM" label="Turkmenistan">Turkmenistan</option>
+            <option value="TC" label="Turks&nbsp;&amp;&nbsp;Caicos&nbsp;Islands">Turks&nbsp;&amp;&nbsp;Caicos&nbsp;Islands</option>
+            <option value="TV" label="Tuvalu">Tuvalu</option>
+            <option value="UG" label="Uganda">Uganda</option>
+            <option value="UA" label="Ukraine">Ukraine</option>
+            <option value="AE" label="United&nbsp;Arab&nbsp;Emirates">United&nbsp;Arab&nbsp;Emirates</option>
+            <option value="GB" label="United&nbsp;Kingdom">United&nbsp;Kingdom</option>
+            <option value="VI" label="United&nbsp;States&nbsp;Virgin&nbsp;Islands">United&nbsp;States&nbsp;Virgin&nbsp;Islands</option>
+            <option value="ZZ" label="Unknown/Other">Unknown/Other</option>
+            <option value="UY" label="Uruguay">Uruguay</option>
+            <option value="US" label="USA">USA</option>
+            <option value="UZ" label="Uzbekistan">Uzbekistan</option>
+            <option value="VU" label="Vanuatu">Vanuatu</option>
+            <option value="VA" label="Vatican&nbsp;City&nbsp;State&nbsp;(Holy&nbsp;See)">Vatican&nbsp;City&nbsp;State&nbsp;(Holy&nbsp;See)</option>
+            <option value="VE" label="Venezuela">Venezuela</option>
+            <option value="VN" label="Viet&nbsp;Nam">Viet&nbsp;Nam</option>
+            <option value="WF" label="Wallis&nbsp;&amp;&nbsp;Futuna&nbsp;Islands">Wallis&nbsp;&amp;&nbsp;Futuna&nbsp;Islands</option>
+            <option value="EH" label="Western&nbsp;Sahara">Western&nbsp;Sahara</option>
+            <option value="YE" label="Yemen">Yemen</option>
+            <option value="ZR" label="Zaire">Zaire</option>
+            <option value="ZM" label="Zambia">Zambia</option>
+            <option value="ZW" label="Zimbabwe">Zimbabwe</option>
+            </optgroup>
+        </select></div>
+        <div class="selectOption"><label for="dc45__VisaType" class="optional js-label">Current Visa</label>
+        
+        <select name="dc45__VisaType[]" id="dc45__VisaType" multiple="multiple" class="selectOption_visatype">
+            <option value="Electronic Travel Authority (subclass 601)" label="Electronic&nbsp;Travel&nbsp;Authority&nbsp;(subclass&nbsp;601)">Electronic&nbsp;Travel&nbsp;Authority&nbsp;(subclass&nbsp;601)</option>
+            <option value="eVisitor (subclass 651)" label="eVisitor&nbsp;(subclass&nbsp;651)">eVisitor&nbsp;(subclass&nbsp;651)</option>
+            <option value="Transit visa (subclass 771)" label="Transit&nbsp;visa&nbsp;(subclass&nbsp;771)">Transit&nbsp;visa&nbsp;(subclass&nbsp;771)</option>
+            <option value="Visitor (subclass 600)" label="Visitor&nbsp;(subclass&nbsp;600)">Visitor&nbsp;(subclass&nbsp;600)</option>
+            <option value="Work and Holiday visa (subclass 462)" label="Work&nbsp;and&nbsp;Holiday&nbsp;visa&nbsp;(subclass&nbsp;462)">Work&nbsp;and&nbsp;Holiday&nbsp;visa&nbsp;(subclass&nbsp;462)</option>
+            <option value="Working Holiday visa (subclass 417)" label="Working&nbsp;Holiday&nbsp;visa&nbsp;(subclass&nbsp;417)">Working&nbsp;Holiday&nbsp;visa&nbsp;(subclass&nbsp;417)</option>
+            <option value="Studying and training visas" label="Studying&nbsp;and&nbsp;training&nbsp;visas">Studying&nbsp;and&nbsp;training&nbsp;visas</option>
+            <option value="Student visa (subclass 500)" label="Student&nbsp;visa&nbsp;(subclass&nbsp;500)">Student&nbsp;visa&nbsp;(subclass&nbsp;500)</option>
+            <option value="Student Guardian visa (subclass 590)" label="Student&nbsp;Guardian&nbsp;visa&nbsp;(subclass&nbsp;590)">Student&nbsp;Guardian&nbsp;visa&nbsp;(subclass&nbsp;590)</option>
+            <option value="Training visa (subclass 407)" label="Training&nbsp;visa&nbsp;(subclass&nbsp;407)">Training&nbsp;visa&nbsp;(subclass&nbsp;407)</option>
+            <option value="Family and partner visas" label="Family&nbsp;and&nbsp;partner&nbsp;visas">Family&nbsp;and&nbsp;partner&nbsp;visas</option>
+            <option value="Adoption visa (subclass 102)" label="Adoption&nbsp;visa&nbsp;(subclass&nbsp;102)">Adoption&nbsp;visa&nbsp;(subclass&nbsp;102)</option>
+            <option value="Aged Dependent Relative visa (subclass 114)" label="Aged&nbsp;Dependent&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;114)">Aged&nbsp;Dependent&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;114)</option>
+            <option value="Aged Dependent Relative visa (subclass 838)" label="Aged&nbsp;Dependent&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;838)">Aged&nbsp;Dependent&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;838)</option>
+            <option value="Aged Parent visa (subclass 804)" label="Aged&nbsp;Parent&nbsp;visa&nbsp;(subclass&nbsp;804)">Aged&nbsp;Parent&nbsp;visa&nbsp;(subclass&nbsp;804)</option>
+            <option value="Carer visa (subclass 836)" label="Carer&nbsp;visa&nbsp;(subclass&nbsp;836)">Carer&nbsp;visa&nbsp;(subclass&nbsp;836)</option>
+            <option value="Carer visa (subclass 116)" label="Carer&nbsp;visa&nbsp;(subclass&nbsp;116)">Carer&nbsp;visa&nbsp;(subclass&nbsp;116)</option>
+            <option value="Child visa (subclass 101)" label="Child&nbsp;visa&nbsp;(subclass&nbsp;101)">Child&nbsp;visa&nbsp;(subclass&nbsp;101)</option>
+            <option value="Child visa (subclass 802)" label="Child&nbsp;visa&nbsp;(subclass&nbsp;802)">Child&nbsp;visa&nbsp;(subclass&nbsp;802)</option>
+            <option value="Contributory Aged Parent (Temporary) visa (subclass 884)" label="Contributory&nbsp;Aged&nbsp;Parent&nbsp;(Temporary)&nbsp;visa&nbsp;(subclass&nbsp;884)">Contributory&nbsp;Aged&nbsp;Parent&nbsp;(Temporary)&nbsp;visa&nbsp;(subclass&nbsp;884)</option>
+            <option value="Contributory Aged Parent visa (subclass 864)" label="Contributory&nbsp;Aged&nbsp;Parent&nbsp;visa&nbsp;(subclass&nbsp;864)">Contributory&nbsp;Aged&nbsp;Parent&nbsp;visa&nbsp;(subclass&nbsp;864)</option>
+            <option value="Contributory Parent (Temporary) visa (subclass 173)" label="Contributory&nbsp;Parent&nbsp;(Temporary)&nbsp;visa&nbsp;(subclass&nbsp;173)">Contributory&nbsp;Parent&nbsp;(Temporary)&nbsp;visa&nbsp;(subclass&nbsp;173)</option>
+            <option value="Contributory Parent visa (subclass 143)" label="Contributory&nbsp;Parent&nbsp;visa&nbsp;(subclass&nbsp;143)">Contributory&nbsp;Parent&nbsp;visa&nbsp;(subclass&nbsp;143)</option>
+            <option value="Dependent Child visa (subclass 445)" label="Dependent&nbsp;Child&nbsp;visa&nbsp;(subclass&nbsp;445)">Dependent&nbsp;Child&nbsp;visa&nbsp;(subclass&nbsp;445)</option>
+            <option value="New Zealand Citizen Family Relationship (temporary) visa (subclass 461)" label="New&nbsp;Zealand&nbsp;Citizen&nbsp;Family&nbsp;Relationship&nbsp;(temporary)&nbsp;visa&nbsp;(subclass&nbsp;461)">New&nbsp;Zealand&nbsp;Citizen&nbsp;Family&nbsp;Relationship&nbsp;(temporary)&nbsp;visa&nbsp;(subclass&nbsp;461)</option>
+            <option value="Orphan Relative (subclass 117)" label="Orphan&nbsp;Relative&nbsp;(subclass&nbsp;117)">Orphan&nbsp;Relative&nbsp;(subclass&nbsp;117)</option>
+            <option value="Orphan Relative (subclass 837)" label="Orphan&nbsp;Relative&nbsp;(subclass&nbsp;837)">Orphan&nbsp;Relative&nbsp;(subclass&nbsp;837)</option>
+            <option value="Parent visa (subclass 103)" label="Parent&nbsp;visa&nbsp;(subclass&nbsp;103)">Parent&nbsp;visa&nbsp;(subclass&nbsp;103)</option>
+            <option value="Partner (Provisional and Migrant) visa (subclass 309 100)" label="Partner&nbsp;(Provisional&nbsp;and&nbsp;Migrant)&nbsp;visa&nbsp;(subclass&nbsp;309&nbsp;100)">Partner&nbsp;(Provisional&nbsp;and&nbsp;Migrant)&nbsp;visa&nbsp;(subclass&nbsp;309&nbsp;100)</option>
+            <option value="Partner visa (subclass 820 801)" label="Partner&nbsp;visa&nbsp;(subclass&nbsp;820&nbsp;801)">Partner&nbsp;visa&nbsp;(subclass&nbsp;820&nbsp;801)</option>
+            <option value="Prospective Marriage visa (subclass 300)" label="Prospective&nbsp;Marriage&nbsp;visa&nbsp;(subclass&nbsp;300)">Prospective&nbsp;Marriage&nbsp;visa&nbsp;(subclass&nbsp;300)</option>
+            <option value="Remaining Relative visa (subclass 115)" label="Remaining&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;115)">Remaining&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;115)</option>
+            <option value="Remaining Relative visa (subclass 835)" label="Remaining&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;835)">Remaining&nbsp;Relative&nbsp;visa&nbsp;(subclass&nbsp;835)</option>
+            <option value="Sponsored Parent (Temporary) visa (subclass 870)" label="Sponsored&nbsp;Parent&nbsp;(Temporary)&nbsp;visa&nbsp;(subclass&nbsp;870)">Sponsored&nbsp;Parent&nbsp;(Temporary)&nbsp;visa&nbsp;(subclass&nbsp;870)</option>
+            <option value="Working and skilled visas" label="Working&nbsp;and&nbsp;skilled&nbsp;visas">Working&nbsp;and&nbsp;skilled&nbsp;visas</option>
+            <option value="Business Innovation and Investment (permanent) visa (subclass 888)" label="Business&nbsp;Innovation&nbsp;and&nbsp;Investment&nbsp;(permanent)&nbsp;visa&nbsp;(subclass&nbsp;888)">Business&nbsp;Innovation&nbsp;and&nbsp;Investment&nbsp;(permanent)&nbsp;visa&nbsp;(subclass&nbsp;888)</option>
+            <option value="Business Innovation and Investment (provisional) visa (subclass 188)" label="Business&nbsp;Innovation&nbsp;and&nbsp;Investment&nbsp;(provisional)&nbsp;visa&nbsp;(subclass&nbsp;188)">Business&nbsp;Innovation&nbsp;and&nbsp;Investment&nbsp;(provisional)&nbsp;visa&nbsp;(subclass&nbsp;188)</option>
+            <option value="Business Owner (subclass 890)" label="Business&nbsp;Owner&nbsp;(subclass&nbsp;890)">Business&nbsp;Owner&nbsp;(subclass&nbsp;890)</option>
+            <option value="Business Talent (Permanent) visa (subclass 132)" label="Business&nbsp;Talent&nbsp;(Permanent)&nbsp;visa&nbsp;(subclass&nbsp;132)">Business&nbsp;Talent&nbsp;(Permanent)&nbsp;visa&nbsp;(subclass&nbsp;132)</option>
+            <option value="Distinguished Talent visa (subclass 124)" label="Distinguished&nbsp;Talent&nbsp;visa&nbsp;(subclass&nbsp;124)">Distinguished&nbsp;Talent&nbsp;visa&nbsp;(subclass&nbsp;124)</option>
+            <option value="Distinguished Talent visa (subclass 858)" label="Distinguished&nbsp;Talent&nbsp;visa&nbsp;(subclass&nbsp;858)">Distinguished&nbsp;Talent&nbsp;visa&nbsp;(subclass&nbsp;858)</option>
+            <option value="Employer Nomination Scheme (subclass 186)" label="Employer&nbsp;Nomination&nbsp;Scheme&nbsp;(subclass&nbsp;186)">Employer&nbsp;Nomination&nbsp;Scheme&nbsp;(subclass&nbsp;186)</option>
+            <option value="Investor visa (subclass 891)" label="Investor&nbsp;visa&nbsp;(subclass&nbsp;891)">Investor&nbsp;visa&nbsp;(subclass&nbsp;891)</option>
+            <option value="Permanent Residence (Skilled Regional) visa (subclass 191)" label="Permanent&nbsp;Residence&nbsp;(Skilled&nbsp;Regional)&nbsp;visa&nbsp;(subclass&nbsp;191)">Permanent&nbsp;Residence&nbsp;(Skilled&nbsp;Regional)&nbsp;visa&nbsp;(subclass&nbsp;191)</option>
+            <option value="Regional Sponsored Migration Scheme (subclass 187)" label="Regional&nbsp;Sponsored&nbsp;Migration&nbsp;Scheme&nbsp;(subclass&nbsp;187)">Regional&nbsp;Sponsored&nbsp;Migration&nbsp;Scheme&nbsp;(subclass&nbsp;187)</option>
+            <option value="Skilled Employer Sponsored Regional (provisional) visa (subclass 494)" label="Skilled&nbsp;Employer&nbsp;Sponsored&nbsp;Regional&nbsp;(provisional)&nbsp;visa&nbsp;(subclass&nbsp;494)">Skilled&nbsp;Employer&nbsp;Sponsored&nbsp;Regional&nbsp;(provisional)&nbsp;visa&nbsp;(subclass&nbsp;494)</option>
+            <option value="Skilled Independent visa (subclass 189)" label="Skilled&nbsp;Independent&nbsp;visa&nbsp;(subclass&nbsp;189)">Skilled&nbsp;Independent&nbsp;visa&nbsp;(subclass&nbsp;189)</option>
+            <option value="Skilled Nominated visa (subclass 190)" label="Skilled&nbsp;Nominated&nbsp;visa&nbsp;(subclass&nbsp;190)">Skilled&nbsp;Nominated&nbsp;visa&nbsp;(subclass&nbsp;190)</option>
+            <option value="Skilled-Recognised Graduate visa (subclass 476)" label="Skilled-Recognised&nbsp;Graduate&nbsp;visa&nbsp;(subclass&nbsp;476)">Skilled-Recognised&nbsp;Graduate&nbsp;visa&nbsp;(subclass&nbsp;476)</option>
+            <option value="Skilled Regional (provisional) visa (subclass 489)" label="Skilled&nbsp;Regional&nbsp;(provisional)&nbsp;visa&nbsp;(subclass&nbsp;489)">Skilled&nbsp;Regional&nbsp;(provisional)&nbsp;visa&nbsp;(subclass&nbsp;489)</option>
+            <option value="Skilled Regional visa (subclass 887)" label="Skilled&nbsp;Regional&nbsp;visa&nbsp;(subclass&nbsp;887)">Skilled&nbsp;Regional&nbsp;visa&nbsp;(subclass&nbsp;887)</option>
+            <option value="Skilled Work Regional (Provisional) visa (subclass 491)" label="Skilled&nbsp;Work&nbsp;Regional&nbsp;(Provisional)&nbsp;visa&nbsp;(subclass&nbsp;491)">Skilled&nbsp;Work&nbsp;Regional&nbsp;(Provisional)&nbsp;visa&nbsp;(subclass&nbsp;491)</option>
+            <option value="State or Territory Sponsored Business Owner visa (subclass 892)" label="State&nbsp;or&nbsp;Territory&nbsp;Sponsored&nbsp;Business&nbsp;Owner&nbsp;visa&nbsp;(subclass&nbsp;892)">State&nbsp;or&nbsp;Territory&nbsp;Sponsored&nbsp;Business&nbsp;Owner&nbsp;visa&nbsp;(subclass&nbsp;892)</option>
+            <option value="State or Territory Sponsored Investor visa (subclass 893)" label="State&nbsp;or&nbsp;Territory&nbsp;Sponsored&nbsp;Investor&nbsp;visa&nbsp;(subclass&nbsp;893)">State&nbsp;or&nbsp;Territory&nbsp;Sponsored&nbsp;Investor&nbsp;visa&nbsp;(subclass&nbsp;893)</option>
+            <option value="Temporary Activity visa (subclass 408)" label="Temporary&nbsp;Activity&nbsp;visa&nbsp;(subclass&nbsp;408)">Temporary&nbsp;Activity&nbsp;visa&nbsp;(subclass&nbsp;408)</option>
+            <option value="Temporary Graduate visa (subclass 485)" label="Temporary&nbsp;Graduate&nbsp;visa&nbsp;(subclass&nbsp;485)">Temporary&nbsp;Graduate&nbsp;visa&nbsp;(subclass&nbsp;485)</option>
+            <option value="Temporary Work (International Relations) visa (subclass 403)" label="Temporary&nbsp;Work&nbsp;(International&nbsp;Relations)&nbsp;visa&nbsp;(subclass&nbsp;403)">Temporary&nbsp;Work&nbsp;(International&nbsp;Relations)&nbsp;visa&nbsp;(subclass&nbsp;403)</option>
+            <option value="Temporary Work (Short Stay Specialist) visa (subclass 400)" label="Temporary&nbsp;Work&nbsp;(Short&nbsp;Stay&nbsp;Specialist)&nbsp;visa&nbsp;(subclass&nbsp;400)">Temporary&nbsp;Work&nbsp;(Short&nbsp;Stay&nbsp;Specialist)&nbsp;visa&nbsp;(subclass&nbsp;400)</option>
+            <option value="Temporary Skill Shortage visa (subclass 482)" label="Temporary&nbsp;Skill&nbsp;Shortage&nbsp;visa&nbsp;(subclass&nbsp;482)">Temporary&nbsp;Skill&nbsp;Shortage&nbsp;visa&nbsp;(subclass&nbsp;482)</option>
+            <option value="Refugee and humanitarian visas" label="Refugee&nbsp;and&nbsp;humanitarian&nbsp;visas">Refugee&nbsp;and&nbsp;humanitarian&nbsp;visas</option>
+            <option value="Global Special Humanitarian (subclass 202)" label="Global&nbsp;Special&nbsp;Humanitarian&nbsp;(subclass&nbsp;202)">Global&nbsp;Special&nbsp;Humanitarian&nbsp;(subclass&nbsp;202)</option>
+            <option value="Protection visa (subclass 866)" label="Protection&nbsp;visa&nbsp;(subclass&nbsp;866)">Protection&nbsp;visa&nbsp;(subclass&nbsp;866)</option>
+            <option value="Refugee visas (subclass 200, 201, 203 and 204)" label="Refugee&nbsp;visas&nbsp;(subclass&nbsp;200,&nbsp;201,&nbsp;203&nbsp;and&nbsp;204)">Refugee&nbsp;visas&nbsp;(subclass&nbsp;200,&nbsp;201,&nbsp;203&nbsp;and&nbsp;204)</option>
+            <option value="Temporary Protection visa (subclass 785)" label="Temporary&nbsp;Protection&nbsp;visa&nbsp;(subclass&nbsp;785)">Temporary&nbsp;Protection&nbsp;visa&nbsp;(subclass&nbsp;785)</option>
+            <option value="Safe Haven Enterprise visa (subclass 790)" label="Safe&nbsp;Haven&nbsp;Enterprise&nbsp;visa&nbsp;(subclass&nbsp;790)">Safe&nbsp;Haven&nbsp;Enterprise&nbsp;visa&nbsp;(subclass&nbsp;790)</option>
+            <option value="Other visas" label="Other&nbsp;visas">Other&nbsp;visas</option>
+            <option value="Bridging visa A – BVA - (subclass 010)" label="Bridging&nbsp;visa&nbsp;A&nbsp;–&nbsp;BVA&nbsp;-&nbsp;(subclass&nbsp;010)">Bridging&nbsp;visa&nbsp;A&nbsp;–&nbsp;BVA&nbsp;-&nbsp;(subclass&nbsp;010)</option>
+            <option value="Bridging visa B – BVB – (subclass 020)" label="Bridging&nbsp;visa&nbsp;B&nbsp;–&nbsp;BVB&nbsp;–&nbsp;(subclass&nbsp;020)">Bridging&nbsp;visa&nbsp;B&nbsp;–&nbsp;BVB&nbsp;–&nbsp;(subclass&nbsp;020)</option>
+            <option value="Bridging visa C – BVC – (subclass 030)" label="Bridging&nbsp;visa&nbsp;C&nbsp;–&nbsp;BVC&nbsp;–&nbsp;(subclass&nbsp;030)">Bridging&nbsp;visa&nbsp;C&nbsp;–&nbsp;BVC&nbsp;–&nbsp;(subclass&nbsp;030)</option>
+            <option value="Bridging visa E – BVE – (subclass 050 and 051)" label="Bridging&nbsp;visa&nbsp;E&nbsp;–&nbsp;BVE&nbsp;–&nbsp;(subclass&nbsp;050&nbsp;and&nbsp;051)">Bridging&nbsp;visa&nbsp;E&nbsp;–&nbsp;BVE&nbsp;–&nbsp;(subclass&nbsp;050&nbsp;and&nbsp;051)</option>
+            <option value="Crew Travel Authority visa (subclass 942)" label="Crew&nbsp;Travel&nbsp;Authority&nbsp;visa&nbsp;(subclass&nbsp;942)">Crew&nbsp;Travel&nbsp;Authority&nbsp;visa&nbsp;(subclass&nbsp;942)</option>
+            <option value="Former Resident visa (subclass 151)" label="Former&nbsp;Resident&nbsp;visa&nbsp;(subclass&nbsp;151)">Former&nbsp;Resident&nbsp;visa&nbsp;(subclass&nbsp;151)</option>
+            <option value="Maritime Crew visa (subclass 988)" label="Maritime&nbsp;Crew&nbsp;visa&nbsp;(subclass&nbsp;988)">Maritime&nbsp;Crew&nbsp;visa&nbsp;(subclass&nbsp;988)</option>
+            <option value="Medical Treatment visa (subclass 602)" label="Medical&nbsp;Treatment&nbsp;visa&nbsp;(subclass&nbsp;602)">Medical&nbsp;Treatment&nbsp;visa&nbsp;(subclass&nbsp;602)</option>
+            <option value="Resident Return visa (subclass 155 157)" label="Resident&nbsp;Return&nbsp;visa&nbsp;(subclass&nbsp;155&nbsp;157)">Resident&nbsp;Return&nbsp;visa&nbsp;(subclass&nbsp;155&nbsp;157)</option>
+            <option value="Special Category visa (subclass 444)" label="Special&nbsp;Category&nbsp;visa&nbsp;(subclass&nbsp;444)">Special&nbsp;Category&nbsp;visa&nbsp;(subclass&nbsp;444)</option>
+            <option value="Special Purpose visa" label="Special&nbsp;Purpose&nbsp;visa">Special&nbsp;Purpose&nbsp;visa</option>
+            <option value="Investor Retirement visa (subclass 405)" label="Investor&nbsp;Retirement&nbsp;visa&nbsp;(subclass&nbsp;405)">Investor&nbsp;Retirement&nbsp;visa&nbsp;(subclass&nbsp;405)</option>
+            <option value="Confirmatory (Residence) visa (subclass 808)" label="Confirmatory&nbsp;(Residence)&nbsp;visa&nbsp;(subclass&nbsp;808)">Confirmatory&nbsp;(Residence)&nbsp;visa&nbsp;(subclass&nbsp;808)</option>
+            <option value="Repealed visas" label="Repealed&nbsp;visas">Repealed&nbsp;visas</option>
+            <option value="Business (Short Stay) visa (subclass 456)" label="Business&nbsp;(Short&nbsp;Stay)&nbsp;visa&nbsp;(subclass&nbsp;456)">Business&nbsp;(Short&nbsp;Stay)&nbsp;visa&nbsp;(subclass&nbsp;456)</option>
+            <option value="Business Skills (Provisional) visa (subclass 160 and 165)" label="Business&nbsp;Skills&nbsp;(Provisional)&nbsp;visa&nbsp;(subclass&nbsp;160&nbsp;and&nbsp;165)">Business&nbsp;Skills&nbsp;(Provisional)&nbsp;visa&nbsp;(subclass&nbsp;160&nbsp;and&nbsp;165)</option>
+            <option value="Domestic Worker (Temporary) Diplomatic and Consular visa (subclass 426)" label="Domestic&nbsp;Worker&nbsp;(Temporary)&nbsp;Diplomatic&nbsp;and&nbsp;Consular&nbsp;visa&nbsp;(subclass&nbsp;426)">Domestic&nbsp;Worker&nbsp;(Temporary)&nbsp;Diplomatic&nbsp;and&nbsp;Consular&nbsp;visa&nbsp;(subclass&nbsp;426)</option>
+            <option value="Domestic Worker (Temporary) Executive visa (subclass 427)" label="Domestic&nbsp;Worker&nbsp;(Temporary)&nbsp;Executive&nbsp;visa&nbsp;(subclass&nbsp;427)">Domestic&nbsp;Worker&nbsp;(Temporary)&nbsp;Executive&nbsp;visa&nbsp;(subclass&nbsp;427)</option>
+            <option value="Electronic Travel Authority (Business Entrant) visa (subclass 956 and 977)" label="Electronic&nbsp;Travel&nbsp;Authority&nbsp;(Business&nbsp;Entrant)&nbsp;visa&nbsp;(subclass&nbsp;956&nbsp;and&nbsp;977)">Electronic&nbsp;Travel&nbsp;Authority&nbsp;(Business&nbsp;Entrant)&nbsp;visa&nbsp;(subclass&nbsp;956&nbsp;and&nbsp;977)</option>
+            <option value="Electronic Travel Authority (Visitor) visa (subclass 976)" label="Electronic&nbsp;Travel&nbsp;Authority&nbsp;(Visitor)&nbsp;visa&nbsp;(subclass&nbsp;976)">Electronic&nbsp;Travel&nbsp;Authority&nbsp;(Visitor)&nbsp;visa&nbsp;(subclass&nbsp;976)</option>
+            <option value="Employer Nomination Scheme (subclass 121 and 856)" label="Employer&nbsp;Nomination&nbsp;Scheme&nbsp;(subclass&nbsp;121&nbsp;and&nbsp;856)">Employer&nbsp;Nomination&nbsp;Scheme&nbsp;(subclass&nbsp;121&nbsp;and&nbsp;856)</option>
+            <option value="Established Business in Australia visa (subclass 845)" label="Established&nbsp;Business&nbsp;in&nbsp;Australia&nbsp;visa&nbsp;(subclass&nbsp;845)">Established&nbsp;Business&nbsp;in&nbsp;Australia&nbsp;visa&nbsp;(subclass&nbsp;845)</option>
+            <option value="Exchange visa (subclass 411)" label="Exchange&nbsp;visa&nbsp;(subclass&nbsp;411)">Exchange&nbsp;visa&nbsp;(subclass&nbsp;411)</option>
+            <option value="Foreign Government Agency (subclass 415)" label="Foreign&nbsp;Government&nbsp;Agency&nbsp;(subclass&nbsp;415)">Foreign&nbsp;Government&nbsp;Agency&nbsp;(subclass&nbsp;415)</option>
+            <option value="Government Agreement visa (subclass 406)" label="Government&nbsp;Agreement&nbsp;visa&nbsp;(subclass&nbsp;406)">Government&nbsp;Agreement&nbsp;visa&nbsp;(subclass&nbsp;406)</option>
+            <option value="Labour Agreement visa (subclass 120)" label="Labour&nbsp;Agreement&nbsp;visa&nbsp;(subclass&nbsp;120)">Labour&nbsp;Agreement&nbsp;visa&nbsp;(subclass&nbsp;120)</option>
+            <option value="Labour Agreement visa (subclass 855)" label="Labour&nbsp;Agreement&nbsp;visa&nbsp;(subclass&nbsp;855)">Labour&nbsp;Agreement&nbsp;visa&nbsp;(subclass&nbsp;855)</option>
+            <option value="Media and Film Staff visa (subclass 423)" label="Media&nbsp;and&nbsp;Film&nbsp;Staff&nbsp;visa&nbsp;(subclass&nbsp;423)">Media&nbsp;and&nbsp;Film&nbsp;Staff&nbsp;visa&nbsp;(subclass&nbsp;423)</option>
+            <option value="Medical Practitioner visa (subclass 422)" label="Medical&nbsp;Practitioner&nbsp;visa&nbsp;(subclass&nbsp;422)">Medical&nbsp;Practitioner&nbsp;visa&nbsp;(subclass&nbsp;422)</option>
+            <option value="Medical Treatment (Short Stay) visa (subclass 675)" label="Medical&nbsp;Treatment&nbsp;(Short&nbsp;Stay)&nbsp;visa&nbsp;(subclass&nbsp;675)">Medical&nbsp;Treatment&nbsp;(Short&nbsp;Stay)&nbsp;visa&nbsp;(subclass&nbsp;675)</option>
+            <option value="Medical Treatment Long Stay visa (subclass 685)" label="Medical&nbsp;Treatment&nbsp;Long&nbsp;Stay&nbsp;visa&nbsp;(subclass&nbsp;685)">Medical&nbsp;Treatment&nbsp;Long&nbsp;Stay&nbsp;visa&nbsp;(subclass&nbsp;685)</option>
+            <option value="Regional Sponsor Migration Scheme (subclass 119 and 857)" label="Regional&nbsp;Sponsor&nbsp;Migration&nbsp;Scheme&nbsp;(subclass&nbsp;119&nbsp;and&nbsp;857)">Regional&nbsp;Sponsor&nbsp;Migration&nbsp;Scheme&nbsp;(subclass&nbsp;119&nbsp;and&nbsp;857)</option>
+            <option value="Religious Worker visa (subclass 428)" label="Religious&nbsp;Worker&nbsp;visa&nbsp;(subclass&nbsp;428)">Religious&nbsp;Worker&nbsp;visa&nbsp;(subclass&nbsp;428)</option>
+            <option value="Retirement visa (subclass 410)" label="Retirement&nbsp;visa&nbsp;(subclass&nbsp;410)">Retirement&nbsp;visa&nbsp;(subclass&nbsp;410)</option>
+            <option value="Skilled Designated Area Sponsored visa (subclass 496)" label="Skilled&nbsp;Designated&nbsp;Area&nbsp;Sponsored&nbsp;visa&nbsp;(subclass&nbsp;496)">Skilled&nbsp;Designated&nbsp;Area&nbsp;Sponsored&nbsp;visa&nbsp;(subclass&nbsp;496)</option>
+            <option value="Skilled Independent Regional (Provisional) visa (subclass 495)" label="Skilled&nbsp;Independent&nbsp;Regional&nbsp;(Provisional)&nbsp;visa&nbsp;(subclass&nbsp;495)">Skilled&nbsp;Independent&nbsp;Regional&nbsp;(Provisional)&nbsp;visa&nbsp;(subclass&nbsp;495)</option>
+            <option value="Skilled Independent visa (subclass 175)" label="Skilled&nbsp;Independent&nbsp;visa&nbsp;(subclass&nbsp;175)">Skilled&nbsp;Independent&nbsp;visa&nbsp;(subclass&nbsp;175)</option>
+            <option value="Skilled Independent visa (subclass 885)" label="Skilled&nbsp;Independent&nbsp;visa&nbsp;(subclass&nbsp;885)">Skilled&nbsp;Independent&nbsp;visa&nbsp;(subclass&nbsp;885)</option>
+            <option value="Skilled Regional Sponsored visa (subclass 475)" label="Skilled&nbsp;Regional&nbsp;Sponsored&nbsp;visa&nbsp;(subclass&nbsp;475)">Skilled&nbsp;Regional&nbsp;Sponsored&nbsp;visa&nbsp;(subclass&nbsp;475)</option>
+            <option value="Skilled Regional Sponsored (subclass 487)" label="Skilled&nbsp;Regional&nbsp;Sponsored&nbsp;(subclass&nbsp;487)">Skilled&nbsp;Regional&nbsp;Sponsored&nbsp;(subclass&nbsp;487)</option>
+            <option value="Skilled Sponsored visa (subclass 176)" label="Skilled&nbsp;Sponsored&nbsp;visa&nbsp;(subclass&nbsp;176)">Skilled&nbsp;Sponsored&nbsp;visa&nbsp;(subclass&nbsp;176)</option>
+            <option value="Special Program visa (subclass 416)" label="Special&nbsp;Program&nbsp;visa&nbsp;(subclass&nbsp;416)">Special&nbsp;Program&nbsp;visa&nbsp;(subclass&nbsp;416)</option>
+            <option value="Sponsored visa (subclass 886)" label="Sponsored&nbsp;visa&nbsp;(subclass&nbsp;886)">Sponsored&nbsp;visa&nbsp;(subclass&nbsp;886)</option>
+            <option value="Sport visa (subclass 421)" label="Sport&nbsp;visa&nbsp;(subclass&nbsp;421)">Sport&nbsp;visa&nbsp;(subclass&nbsp;421)</option>
+            <option value="Superyacht Crew visa (subclass 488)" label="Superyacht&nbsp;Crew&nbsp;visa&nbsp;(subclass&nbsp;488)">Superyacht&nbsp;Crew&nbsp;visa&nbsp;(subclass&nbsp;488)</option>
+            <option value="State or Territory Sponsored Regional Established Business in Australia visa (subclass 846)" label="State&nbsp;or&nbsp;Territory&nbsp;Sponsored&nbsp;Regional&nbsp;Established&nbsp;Business&nbsp;in&nbsp;Australia&nbsp;visa&nbsp;(subclass&nbsp;846)">State&nbsp;or&nbsp;Territory&nbsp;Sponsored&nbsp;Regional&nbsp;Established&nbsp;Business&nbsp;in&nbsp;Australia&nbsp;visa&nbsp;(subclass&nbsp;846)</option>
+            <option value="Temporary Work (Entertainment) visa (subclass 420)" label="Temporary&nbsp;Work&nbsp;(Entertainment)&nbsp;visa&nbsp;(subclass&nbsp;420)">Temporary&nbsp;Work&nbsp;(Entertainment)&nbsp;visa&nbsp;(subclass&nbsp;420)</option>
+            <option value="Temporary Work (Skilled) visa (subclass 457)" label="Temporary&nbsp;Work&nbsp;(Skilled)&nbsp;visa&nbsp;(subclass&nbsp;457)">Temporary&nbsp;Work&nbsp;(Skilled)&nbsp;visa&nbsp;(subclass&nbsp;457)</option>
+            <option value="Tourist visa (subclass 676)" label="Tourist&nbsp;visa&nbsp;(subclass&nbsp;676)">Tourist&nbsp;visa&nbsp;(subclass&nbsp;676)</option>
+            <option value="Temporary Work (long Stay Activity) visa (subclass 401)" label="Temporary&nbsp;Work&nbsp;(long&nbsp;Stay&nbsp;Activity)&nbsp;visa&nbsp;(subclass&nbsp;401)">Temporary&nbsp;Work&nbsp;(long&nbsp;Stay&nbsp;Activity)&nbsp;visa&nbsp;(subclass&nbsp;401)</option>
+            <option value="Training and Research visa (subclass 402)" label="Training&nbsp;and&nbsp;Research&nbsp;visa&nbsp;(subclass&nbsp;402)">Training&nbsp;and&nbsp;Research&nbsp;visa&nbsp;(subclass&nbsp;402)</option>
+            <option value="Visiting Academic visa (subclass 419)" label="Visiting&nbsp;Academic&nbsp;visa&nbsp;(subclass&nbsp;419)">Visiting&nbsp;Academic&nbsp;visa&nbsp;(subclass&nbsp;419)</option>
+            <option value="Foreign Affairs or Defence sector visa (subclass 576)" label="Foreign&nbsp;Affairs&nbsp;or&nbsp;Defence&nbsp;sector&nbsp;visa&nbsp;(subclass&nbsp;576)">Foreign&nbsp;Affairs&nbsp;or&nbsp;Defence&nbsp;sector&nbsp;visa&nbsp;(subclass&nbsp;576)</option>
+            <option value="Higher Education Sector visa (subclass 573)" label="Higher&nbsp;Education&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;573)">Higher&nbsp;Education&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;573)</option>
+            <option value="Independent ELICOS Sector visa (subclass 570)" label="Independent&nbsp;ELICOS&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;570)">Independent&nbsp;ELICOS&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;570)</option>
+            <option value="Non Award Sector visa (subclass 575)" label="Non&nbsp;Award&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;575)">Non&nbsp;Award&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;575)</option>
+            <option value="Postgraduate Research Sector visa (subclass 574)" label="Postgraduate&nbsp;Research&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;574)">Postgraduate&nbsp;Research&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;574)</option>
+            <option value="School Sector visa (subclass 571)" label="School&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;571)">School&nbsp;Sector&nbsp;visa&nbsp;(subclass&nbsp;571)</option>
+            <option value="Student Guardian visa (subclass 580)" label="Student&nbsp;Guardian&nbsp;visa&nbsp;(subclass&nbsp;580)">Student&nbsp;Guardian&nbsp;visa&nbsp;(subclass&nbsp;580)</option>
+            <option value="Vocational Education and Training Sector visa (Subclass 572)" label="Vocational&nbsp;Education&nbsp;and&nbsp;Training&nbsp;Sector&nbsp;visa&nbsp;(Subclass&nbsp;572)">Vocational&nbsp;Education&nbsp;and&nbsp;Training&nbsp;Sector&nbsp;visa&nbsp;(Subclass&nbsp;572)</option>
+        </select>
+        <p class="hint">Please select your current visa.</p></div>
+        <div class="FormField Dc45VisaApplication"><label for="dc45__Visa_application" class="required js-label">Enquiry</label>
+        
+        <textarea name="dc45__Visa_application" id="dc45__Visa_application" class="Dc45VisaApplication" cols="80" rows="10" required="required"></textarea>
+        <p class="hint">Please type your enquiry here.</p></div>
+        <div class="button">
+        <input type="submit" name="Submit" id="Submit" value="Submit" class="Submit"></div></form>
+
+     <!-- <form action="#"> 
+         <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form> -->
+    </div>
+  </div>
+
+</body>
+</html>
