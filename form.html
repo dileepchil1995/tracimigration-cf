@@ -8,30 +8,7 @@
      <script type="text/javascript" src="https://cdn.actionstep.com/assets/Locale.js"></script>
      <script type="text/javascript" src="https://cdn.actionstep.com/assets/DatetimeControl.js"></script>
      <script type="text/javascript" src="https://cdn.actionstep.com/assets/phpDateUtilities.js"></script>
-     <script type="text/javascript">
-     //<!--    
-     if (typeof(ActionStep_Locale) !== 'undefined') {
-         ActionStep_Locale.setDateFormats('%d/%m/%Y', '%d %b %Y', '%A %B %e, %Y');
-         ActionStep_Locale.setFirstDayOfTheWeek('Monday');
-     }
      
-     if (typeof(jQuery) != 'undefined') {
-         jQuery(window).ready(function() {
-             jQuery('.DateControl_CalIcon').attr("src", "https://cdn.actionstep.com/assets/ActionStep_DatetimeControl_Cal.png");
-         });
-     } else {
-         window.setTimeout(function() {
-             var calImages = document.getElementsByClassName("DateControl_CalIcon");
-             for (var i=0;i<calImages.length;i++) {
-                 calImages[i].src = "https://cdn.actionstep.com/assets/ActionStep_DatetimeControl_Cal.png";
-             }
-         }, 500);
-     }
-     ActionStep_DatetimeControl.CONFIG.dateFormat = 'DDMMYYYY';
-     
-     
-     //-->
-     </script>
 
 
 <style>
